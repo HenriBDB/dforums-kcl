@@ -1,0 +1,9 @@
+go.sum
+.jshint
+build/
+.vscode
+test/
+database/
+dfd-config.yaml
+dfd.log
+*.pdf

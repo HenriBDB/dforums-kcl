@@ -1,0 +1,25 @@
+{
+ "name": "dforums-app",
+ "description": "Decentalied Forum for Democratic Discusions - KCL Final Year Project",
+ "author": {
+  "name": "Henri",
+  "email": "henri.dbelloy@gmail.com"
+ },
+ "version": "0.1.0",
+ "binaryname": "dforums-app",
+ "frontend": {
+  "dir": "frontend",
+  "install": "npm install",
+  "build": "npm run build",
+  "bridge": "src",
+  "serve": "npm run serve"
+ },
+ "tags": "",
+ "WailsVersion": "",
+ "CrossCompile": false,
+ "Platform": "",
+ "Architecture": "",
+ "LdFlags": "",
+ "GoPath": "",
+ "UseFirebug": false
+}
