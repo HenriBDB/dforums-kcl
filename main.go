@@ -23,9 +23,9 @@ var networkHandle *network.NetworkModule
 func main() {
 	wd, _ := os.Getwd()
 	configuration.InitConfigs(wd)
-	logPath := wd + "/dfd.log"
+	logPath := wd + string(os.PathSeparator) + "dfd.log"
 	logFile, _ := os.Create(logPath)
-	logFile.Close()
+	logFile.Close() // Create a new empty file or truncate existing
 	configuration.InitLogger(logPath)
 
 	storageModule := storage.NewStorageModule(configuration.GetDatabasePath())

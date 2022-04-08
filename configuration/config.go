@@ -2,6 +2,7 @@ package configuration
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/viper"
 )
@@ -23,7 +24,7 @@ var defaults = map[string]interface{}{
 	networkPortKey:    6870,
 	networkSeedsKey:   []string{},
 	networkPeersKey:   []string{},
-	dbPathKey:         "database/",
+	dbPathKey:         "database" + string(os.PathSeparator),
 	powLevelKey:       "24",
 }
 
@@ -46,8 +47,8 @@ func InitConfigs(configPath string) {
 }
 
 func UpdateConfig(dbPath string, minConn int, maxConn int, powLvl int) {
-	if dbPath != "" && dbPath[len(dbPath)-1:][0] != byte('/') {
-		dbPath = dbPath + "/"
+	if dbPath != "" && dbPath[len(dbPath)-1:][0] != byte(os.PathSeparator) {
+		dbPath = dbPath + string(os.PathSeparator)
 	}
 	viper.Set(dbPathKey, dbPath)
 	if powLvl >= 0 && powLvl <= 3 {

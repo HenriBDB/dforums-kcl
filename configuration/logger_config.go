@@ -2,7 +2,6 @@ package configuration
 
 import (
 	"encoding/json"
-	"time"
 
 	"go.uber.org/zap"
 )
@@ -36,7 +35,4 @@ func InitLogger(logFilePath string) {
 	}
 	Logger = logger.Sugar()
 	defer Logger.Sync()
-
-	Logger.Info("logger construction succeeded")
-	Logger.Error(time.Now().Format(time.RFC822Z))
 }
